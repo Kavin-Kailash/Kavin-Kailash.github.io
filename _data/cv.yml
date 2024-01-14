@@ -2,64 +2,168 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Kavin Kailash Ravie
     - name: Date of Birth
-      value: 14th March 1879
+      value: 4th April 1998
     - name: Languages
-      value: English, German
+      value: English, Tamizh, Hindi
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: MS in Robotic Systems Development (MRSD)
+      institution: Carnegie Mellon University, Pittsburgh, PA, USA
+      year: 2023-2025
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - title: "Capstone Project: <a href='https://theairlab.org/wildfire/'>Autonomus Subcanopy Wildfire Monitoring UAS</a>"
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+            - "Sponsor: AirLab, Carnegie Mellon University"
+            - "Advisor: Prof. Sebastian Scherer"
+            - "Description: Developing an autonomous UAV system for hyper-local undercanopy wildfire detection and monitoring, in perpcetualy challenging environments."
+  
+        - title: "Courses:"
+          contents:
+            - Robot Mobility in Land, Air & Sea
+            - Manipulation, Estimation & Control
+            - Computer Vision
+            - Systems Engineering & Project Management
+            - Reinfocement Learning
+            - Robot Autonomy
+            - Robotics Business Fundamentals
+        
+        - "GPA: 4.17/4.33"
+        - "<a href='https://drive.google.com/file/d/1bYGg18odKSAOupCygKSvVUn3s1pmmD8h/view?usp=sharing'>Enrollment Verification</a>"
+    
+    - title: M.Tech in Robotics
+      institution: Indian Institute of Technology Madras, Chennai, India
+      year: 2020-2021
       description:
-        - Description 1.
-        - Description 2.
+        - title: "Activities:"
+          contents:
+            - "Teachning Assistant: Gas Dyanmics"
+        - title: "Thesis: <a href='https://drive.google.com/drive/folders/10EjfVGvGJBVgACOU0_AyrBfhWk-cicaU'> Adaptive Non-Linear 3D Path Following Guidance for UAVs</a>"
+          contents:
+            - "Advisor: Prof. Satadal Ghosh, GNC Lab"
+            - "Description: Developed a non-linear guidance law for UAVs to follow a 3D path in the presence of wind gusts and model uncertainties"
+        
+        - title: "Courses:"
+          contents:
+            - Field & Service Robotics
+            - Dynamics & Control of Robotic Manipulators
+            - Dynamics & Control of Spacecrafts
+            - Marine Robotics
+            - Autonomous Vehicle Guidance & Control
+            - Modern Control Theory
+            - Robotics & Automation Lab
+            - "Introduction to Robotics: Mechanics, Actuation and Planning"
+        - "GPA: 8.54/10.0"
+        - "<a href='https://drive.google.com/file/d/1qDiIBMSSOkVi0wpe_8rf03BB4mSQReUb/view?usp=sharing'>Degree Certificate</a>"
+  
+    - title: B.Tech in Aerospace Engineering
+      institution: Indian Institute of Technology Madras, Chennai, India
+      year: 2016-2020
+      description:
+        - title: "Activities:"
+          contents:
+            - Lead, Inter-IIT Tech UAV Team [2018-2021]
+            - Advisor, Centre for Innovation (CFI) [2019-2020]
+            - Head, Aerial Robotics Club [2018-2019]
+            - Coordinator, Aerial Robotics Club [2017-2018]
+    
+        - title: "Courses:"
+          contents:
+            - Aerodynamics
+            - Aircraft Performance
+            - Flight Dynamics & Control
+            - Aerospace Estimation & Control
+            - Modern Control Theory
+            - Electric Aircraft Propulsion
+            - Structural Mechanics
+            - Design of MAVs and UAVs
+        - "GPA: 8.00/10.0"
+        - "<a href='https://drive.google.com/file/d/14C20yGWEnZUmH4mi_agI_ZIbs6mUTsuZ/view?usp=sharing'>Degree Certificate</a>"
+     
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Senior Robotics Engineer
+      institution: UAVIO Labs Pvt. Ltd., Bangalore, India
+      year: 12/22 - 04/23
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Led the company's engineering team towards building scalable vision-based aerial systems
+        - Developed a OMPL-based (4D) Informed-RRT* global planner with Octomap world representation
+        - Adopted a Motion Primitives-based Local Planner with enhanced collision cost estimation using Signed-Distance Fields (SDF) local map using incremental Euclidean Distance Transform (EDT)
+        - Developed a modular vision-based Precision Landing system using AprilTags
+        - Integrated Qualcomm’s Machine Vision SDK for Stereo-Visual Inertial Odometry (S-VIO) with support for AprilTag-based relocalisation for drift correction
+        - <a href="https://drive.google.com/file/d/1sTg8r8FD8Q6iEDg4aG9iwqPJGml41Kuq/view">Employment Certificate</a>
+    
+    - title: "Drone Development Engineer: Systems & Autonomy"
+      institution: Recruit Robotics Co. Ltd., Riyadh, Saudi Arabia [Remote]
+      year: 12/21 - 12/22
       description:
-        - Description 1.
-        - Description 2.
+        - Led the development of a L3.5+ flight autonomy software stack for autonomous aerial logistics
+        - Used Open-Street Maps (OSM) data along with VROOM for optimal multi-stop route planning
+        - Implemented a 2.5D A* global planner with a rich multi-layered grid map having Spatio-Temporal Voxel projections (built on OpenVDB), Building data from OSM and user-defined No-Fly Zones
+        - Incorporated a B-Spline based multi-objective optimization local planner to track the global plan safely
+        - Deployed a Terrain Flatness based Safe Landing Planner and a generalizable Precision Landing system
+        - Adopted Behaviour Trees architecture for a modular and easily scalable systems architecture
+        - <a href="https://drive.google.com/file/d/1v3fYbTF90HafEAvv-AG3qmgzv8ny7k4F/view">Employment Certificate</a>
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Robotics Application Developer
+      institution: Detect Technologies Pvt. Ltd., Chennai, India
+      year: 09/21 - 12/21
       description:
+        - Developed a ROS-based software stack for autonomous inspection of industrial assets using UAVs
+        - Developed and validated a robust indoor LiDAR SLAM system for the company's DAX drone series
+        - Built a 2.5D coverage planner using trapezoidal decomposition for uniform image acquisition
+        - Robustified the company's custom autopilot firmware by adding enhanced GPS glitch protection
+        - Integrated an IR-beacon based Precision Landing system using the Pixy Camera
+        - Deployed the system at the 2000MW NTPC Singrauli thermal power plant for boiler inspections
+        - <a href="https://drive.google.com/file/d/1WMmSHsesYZv1-1Nu7Dt6NTTZaRZRHV8A/view">Employment Certificate</a>
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+    - title: Robotics Engineering Intern
+      institution: TechnoYantra Robotics (Acceleration Robotics India), Pune, India [Remote]
+      year: 05/21 - 08/21
+      description:
+      - Developed a ROS-based autonomous navigation system for AMRs in indoor applications
+      - Used a GVD-based Safe Route Planner for automatic generation of safe traversable corridors
+      - Incorporated a State-Lattice (SE2) based global planner using SBPL for the car-like AMR platform
+      - Adopted an optimization-based local planner (Time-Elastic Band Planner) for robust avoidance
+      - Integrated support for highly user-customisable navigation workflows using Behaviour Trees
+      - Deployed the software remotely on the client company's AMR prototype model located in Romania
+      - <a href="https://drive.google.com/file/d/1siCCs1PvL1GWARLuudixXEAfD1H-l8uV/view">Employment Certificate</a>
+
+    - title: UAV Systems Integration Intern
+      institution: TUNGA Aerospace Industries Pvt. Ltd., Chennai, India [Remote]
+      year: 06/20 - 08/20 
+      description:
+        - Designed and Developed technological solutions to aid BVLOS operation of UAVs for ISR missions
+        - Finalised preliminary design of a compact GCS with integrated FHD Video, Telemetry and Control link
+        - Identified robust COTS RGB and IR Cameras, (h265) Video Encoder and WPC-compliant Digital Data Link
+        - Completed initial design of an Automatic Antenna Tracker Unit extending the comms. range by 50%
+        - <a href="https://drive.google.com/file/d/1RCAt9xsPWEzKq7sF2D3JNrMvBQ-WZtED/view?usp=sharing">Employment Certificate</a>
+
+    
+    - title: Aerial Robotics Intern
+      institution: Rodella Labs, Chennai, India
+      year: 12/19 - 02/20
+      description:
+        - Deployed software tools for an autonomous UAV prototype used for defence (ISR, SAR) operations
+        - Implemented a ROS based control API, enabling tight integration with custom guidance algorithms
+        - Incorporated SITL simulation framework, saving 50% of time otherwise spent in redundant on-field tests
+        - <a href="https://drive.google.com/file/d/15qV1ZL0GH_Y3h1V2RZH3lpWtlZpVIxOA/view?usp=sharing">Employment Certificate</a>
+    
+    
+    - title: UAS Product Engineer
+      institution: The ePlane Company, Chennai, India
+      year: 12/18 - 02/19
+      description:
+        - Carried out end-to-end development of a UAV prototype for industrial infrastructure inspection
+        - Adopted a modularised airframe design approach, reducing the mission deployment time by 30%
+        - The prototype met the target specifications; Later launched commercially as the 'Scout' UAV model
+        - <a href="https://drive.google.com/file/d/1JDs94ZcZYrhszHUQ_j4AUBIdqi9DtLwO/view?usp=sharing">Employment Certificate</a>
+
 
 - title: Open Source Projects
   type: time_table
@@ -82,11 +186,17 @@
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Optimal, Adaptive and Robust Control
       items: 
         - Description 1.
         - Description 2.
-    - title: Topic 2.
+    
+    - title: Decision Making
+      items: 
+        - Description 1.
+        - Description 2.
+    
+    - title: Task & Motion Planning
       items:
         - Description 1.
         - Description 2.

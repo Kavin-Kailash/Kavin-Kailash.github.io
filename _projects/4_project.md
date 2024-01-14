@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 4
-description: another without an image
+title: AgriCopter
+description: Autonomous Intelligent Aerial Crop Maintenance System
 img:
-importance: 3
-category: fun
+importance: 4
+category: Competitions
 ---
 
 Every project has a beautiful feature showcase page.

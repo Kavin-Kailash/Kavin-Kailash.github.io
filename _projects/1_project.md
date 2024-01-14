@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
+title: FlexNav
+description: Flexible Navigation Stack for MAVs 
 img: assets/img/12.jpg
 importance: 1
-category: work
+category: Work
 related_publications: einstein1956investigations, einstein1950meaning
 ---
 

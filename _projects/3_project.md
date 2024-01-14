@@ -1,81 +1,185 @@
 ---
 layout: page
-title: project 3
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: AeroLogix
+description: Autonomous GPS-denied UAS for Warehouse Logistics
+img: assets/img/grid/flipkart_grid.gif
 importance: 3
-category: work
+category: Competitions
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+<div class=row>
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+</div>
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_U0wjOnUI5I?si=HEvR3qTHfSC07nkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
+
+### Background
+
+Work undertaken as part of the Flipkart GRiD 2.0 Robotics Challenge.
+
+### Brief
+
+The PS involved developing an GPS-denied UAS which can autonomously identify a sequence randomly spaced sqaure hoops (1m width) and traverse smoothly through the arena while carrying a payload (2kg).
+
+### Approach
+
+**Primary Challenges:**
+- Compact drone design with high payload capacity.
+- Indoor Localization with high precision.
+- Hoop Detection and Pose Estimation
+- Smooth and continuous trajectory planning and execution.
+
+
+Naturally, we divided the problem statement into the following 
+sub-modules/ sub-problems to solve: 
+
+- **Hardware Design:**
+    - Fully custom-designed Airframe
+    - Coaxial OctoCopter Airframe Layout:
+        - Small Footprint
+        - High Payload
+        - Motor Failure Redundancy
+        - Design Optimized for Payload Capacity
+    - Low-cost on-board compute
+    - Nominal AUW: 4.7kg (with 2kg payload)
+    - Nominal Endurance: 9 mins
+    - AirFrame Footprint: 640mm x 585mm x 250mm
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
+    
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/uas.png" title="Custom UAS: BumbleBee" class="img-fluid rounded " %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
 </div>
+
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    BumbleBee UAS Rendering
 </div>
+
+- **Localization:** 
+    - Need robust GPS-denied localisation in warehouse settings.
+    - Adopted Intel RealSense T265's Stereo-Visual Inertial Odometry along with 2D LiDAR SLAM for robsut state-estimation and redundancy.
+    - Completely on-board with 10-15Hz state update rate.
+
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+
+    
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/vio.png" title="Custom UAS: BumbleBee" class="img-fluid rounded " %}
     </div>
+
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/lidar.png" title="Custom UAS: BumbleBee" class="img-fluid rounded " %}
+    </div>
+
 </div>
+
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Different Modalities: Visulization
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
 
+<div class="row">
+    
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
+    
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/state_estimation.png" title="Custom UAS: BumbleBee" class="img-fluid rounded " %}
+    </div>
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
 </div>
+
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    State Estimation Architecture
 </div>
 
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+- **Perception:** 
+    - Robust gate detection with a hybrid RGBD-based hoop detection algorithm.
+    - Used Intel RealSense D435 depth camera for the RGBD images (after depth-color alignment and calibration)
+    - Use of Depth with RGB makes this significantly more robust and allows us to make our solution much more simpler and streamlined.
+    - Significantly more performant as comapred to Deep Learning based approaches, alleviated need for expensive and heavy GPU-based compute. 
+    - Achieved 30FPS on Rapberry Pi 4B (8GB)
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row">
+
+    
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/image_processing.png" title="Custom UAS: BumbleBee" class="img-fluid rounded " %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/cv_arch.png" title="Custom UAS: BumbleBee" class="img-fluid rounded " %}
     </div>
+
+
 </div>
-```
-{% endraw %}
+
+<div class="caption">
+    Hoop Detection in Action; Image Processing Workflow
+</div>
+
+- **Planning and Control:** 
+    - Planning: 
+        - Challenges with Planning 
+            - Modelling Intelligence to react to changes in environment
+            - Computationally cost
+            - Modelling unforeseen scenarios
+
+        - Proposed Scheme: Finite-State Machine (FSM)
+            - Models Hybrid scenarios naturally
+            - Less computational overhead
+            - Robust behaviour through modelling of failsafes
+            - Hierarchically can combine with other planners to solve
+            - And model complex missions
+
+
+    - Trajectory Tracking:
+    - Low-level Controls:
+
+<div class="row">
+    
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
+    
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/controls.png" title="Custom UAS: BumbleBee" class="img-fluid rounded " %}
+    </div>
+
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
+</div>
+
+<div class="caption">
+    Planning & Controls Architecture
+</div>
+
+### Detailed System Design
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRVr5pEr39FXLvcvXZQbaOxYl-kNXX2zE721B3TQs0FEhsRUn-OIZPqeCYtySCa9g/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+<div class="row">
+    
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
+    
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/drdo_explore/iitm_logo.png" title="example image" class="img-fluid rounded " %}
+    </div>
+    
+    <div class="col-sm-1 mt-3 mt-md-0"></div>
+
+    <div class="col-sm-3 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/grid/grid_logo.png" title="example image" class="img-fluid rounded" %}
+    </div>
+
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
+</div>
+
+
+
