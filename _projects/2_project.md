@@ -6,15 +6,26 @@ img: assets/img/drdo_explore/drdo_explore.gif
 importance: 2
 category: Competitions
 giscus_comments: false
+github: https://github.com/Kavin-Kailash/drdo_mav_exploration.git
+skills: [Exploration Planning, Trajectory Optimization, Trajectory Tracking, Behavior Modelling, Pose Estimation, Visual Servoing, ArduPilot, Simulation, ROS, Gazebo]
 ---
 
+<center>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQnMJqIGRcfkcU5o_2Xf-q-mP51ZzzzzkeHle76ilWJaZhbUH4wifEgrjDWtxwRpRp8qFt7Ve6u1827/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</center>
 
 
-
+<div class="caption">
+    Detailed System Design
+</div>
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6BeKwudJcE8?si=ryTAiXqFo0n9U0PS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
+
+<div class="caption">
+    Simulation Runs
+</div>
 
 ### Background
 Work undertaken as part of the competition organized by Defence Research and Development Organization of India (DRDO) at the 9th Inter-IIT Tech Meet.
@@ -78,25 +89,30 @@ based perception sensors for Target search and detection. Successful detection o
 
 Complete simulation runs can be found [here](https://drive.google.com/drive/folders/1FsI2ountCtP4dR7kJMuuxtqeFgvB6fCx?usp=drive_link).
 
-### Detailed System Design
-
-<center>
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQnMJqIGRcfkcU5o_2Xf-q-mP51ZzzzzkeHle76ilWJaZhbUH4wifEgrjDWtxwRpRp8qFt7Ve6u1827/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-</center>
-
 
 <div class="row">
     <div class="col-sm-2 mt-3 mt-md-0">
         {% include figure.html path="assets/img/drdo_explore/iitm_logo.png" title="example image" class="img-fluid rounded " %}
     </div>
     
-    <div class="col-sm-3 mt-3 mt-md-0"></div>
+    <!-- <div class="col-sm-1 mt-3 mt-md-0"></div> -->
+
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/cfi_logo.png" title="example image" class="img-fluid rounded " %}
+    </div>
+
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/aero_club_logo.png" title="example image" class="img-fluid rounded " %}
+    </div>
+
+
+    <!-- <div class="col-sm-1 mt-3 mt-md-0"></div> -->
     
     <div class="col-sm-2 mt-3 mt-md-0">
         {% include figure.html path="assets/img/drdo_explore/tech_meet_logo.png" title="example image" class="img-fluid rounded " %}
     </div>
     
-    <div class="col-sm-3 mt-3 mt-md-0"></div>
+    <!-- <div class="col-sm-1 mt-3 mt-md-0"></div> -->
 
     <div class="col-sm-2 mt-3 mt-md-0">
         {% include figure.html path="assets/img/drdo_explore/drdo_logo.png" title="example image" class="img-fluid rounded" %}

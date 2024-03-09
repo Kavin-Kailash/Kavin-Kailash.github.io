@@ -5,15 +5,25 @@ description: Autonomous GPS-denied UAS for Warehouse Logistics
 img: assets/img/grid/flipkart_grid.gif
 importance: 3
 category: Competitions
+skills: [State Estimation, Sensor Fusion, Controls, Behavior Modelling, Planning, Computer Vision, PX4, Simulation, ROS, Gazebo, UAV Design, CAD/CAE]
 ---
 
-<div class=row>
+<!-- ### Detailed System Design -->
 
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRVr5pEr39FXLvcvXZQbaOxYl-kNXX2zE721B3TQs0FEhsRUn-OIZPqeCYtySCa9g/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<div class="caption">
+    Detailed System Design
 </div>
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_U0wjOnUI5I?si=HEvR3qTHfSC07nkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
+
+<div class="caption">
+    Simulation Run
+</div>
+
 
 ### Background
 
@@ -142,7 +152,41 @@ sub-modules/ sub-problems to solve:
 
 
     - Trajectory Tracking:
+        - Challenges with Traditional Guidance (PID, Pure Pursuit etc):
+            - Asymptotically optimal and not globally optimal
+            - Does not leverage vehicle’s dynamics
+            - Poor performance in sharp turns and aggressive maneuvers
+            - Does not naturally account for system constraints 
+        
+        - Proposed Scheme: Model-Predicitve Controller (MPC)
+            - Globally optimal
+            - Leverages dynamics 
+            - Mission specific tuning 
+            - Better tracking performance
+            - Tracks aggressive maneuvers
+            - Accounts for system constraints
+        
+        - Inputs: Position, Velocity setpoints
+        - Outputs: Attitude-Thrust setpoints
+        - Controller Rate: 50Hz
+
+
     - Low-level Controls:
+        - Critical Considerations:
+            - Inner Most Loop
+            - All control eventually goes through the low level controller
+            - Achilles heel ( Performance Limiting component )
+        
+        - Adopted Approach: Pixhawk 4 running PX4
+            - “ Do not Reinvent the Wheel, Perfect it ”
+            - World’s leading Multirotor Autopilot
+            - Open Source (BSD License)
+            - Highly Configurable and Robust
+        
+        - Tuning
+            - Performance : Hardware design and control Parameters
+            - “Perfect It” equals well Tuned Control Parameters
+
 
 <div class="row">
     
@@ -159,9 +203,7 @@ sub-modules/ sub-problems to solve:
     Planning & Controls Architecture
 </div>
 
-### Detailed System Design
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRVr5pEr39FXLvcvXZQbaOxYl-kNXX2zE721B3TQs0FEhsRUn-OIZPqeCYtySCa9g/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
 <div class="row">

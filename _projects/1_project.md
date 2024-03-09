@@ -4,78 +4,117 @@ title: FlexNav
 description: Flexible Navigation Stack for MAVs 
 img: assets/img/12.jpg
 importance: 1
-category: Work
-related_publications: einstein1956investigations, einstein1950meaning
+category: Self
+giscus_comments: false
+github: https://github.com/kavin-cmu/mav-planning
+skills: [3D Mapping, Motion Planning, Trajectory Optimization, Collision Checking ,Trajectory Tracking, ArduPilot/PX4, SITL, ROS, Gazebo]
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+<center>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQnMJqIGRcfkcU5o_2Xf-q-mP51ZzzzzkeHle76ilWJaZhbUH4wifEgrjDWtxwRpRp8qFt7Ve6u1827/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</center>
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+<div class="caption">
+    Detailed System Design
+</div>
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6BeKwudJcE8?si=ryTAiXqFo0n9U0PS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
+
+<div class="caption">
+    Simulation Runs
+</div>
+
+### Background
+Work undertaken as part of the competition organized by Defence Research and Development Organization of India (DRDO) at the 9th Inter-IIT Tech Meet.
+
+
+## Brief
+Work involved development of a software stack enabling rapid and safe exploration of cluttered surroundings using MAVs equipped with Vision
+based perception sensors for Target search and detection. Successful detection of the visual target (Aruco Marker) is followed by a precision landing routine. NOTE: No apriori information about the environment/target.
+
+[Complete Problem Statement](https://drive.google.com/file/d/1U5QHwJdBRJ_RJP6IYqmUFxuMAOfshTvl/view?usp=drive_link)
+
+
+## Approach
+
+**Motion Planning:**
+- Adopted a Hierarchical Motion Planning system augmented with Frontier Information Strucutres, for fast and safe exploration of the environments. The developed solution was adopted from [this](https://arxiv.org/abs/2010.11561) work.
+- Exploration Planning Rate: 10Hz
+- Local Planning Rate: 25Hz
+- Planning Horizon: 5m
+
+**Trajectory Tracking:**
+- As our robotic system was a conventional multirotor platform, we exploited the differentially flat nature of the multirotor dynamics and hence decided to adopt a Differential Flatness based Geometric SE3 Controller based on this [work](https://ieeexplore.ieee.org/document/5717652)
+- Controller Inputs: Desired Position, Velocity, Acceleration and Jerk
+- Controller Outputs: Attitude Quaternion Setpoint, Thrust Setpoint
+- Controller Rate: 75Hz
+
+**Low-level Flight Stabilization & Control:**
+- We adopted the [Ardupilot](https://github.com/ArduPilot/ardupilot) flight stack for the low level setpoint tracking and overall flight management. 
+- Used [MAVROS](https://wiki.ros.org/mavros) to send desired Attitude+Thrust commands to the FCU running APM
+- Customised the Ardupilot firmware's MAVLINK interface library to add thrust/attitude setpoint compatibility, in [GUIDED](https://ardupilot.org/copter/docs/ac2_guidedmode.html) mode 
+- Only used Ardupilot's attitude and attitude-rate controllers
+
+**Target Detection and Pose Estimation:** 
+- This was solved quite easily using the [aruco_detect](https://wiki.ros.org/aruco_detect) ROS Package
+- Set a post-detection filtering to only pass correct marker ID (ID 0) poses.
+- Acheived a detection rate of 30Hz on 1280x720 resolution camera feed.
+
+**Vision-based Precision Landing:** 
+- Process the fiducial marker poses into MAVLINK [LandingTarget](https://mavlink.io/en/messages/common.html#LANDING_TARGET) format.
+- Passed the poses to FCU via MAVROS [LandingTargetRaw](https://github.com/mavlink/mavros/blob/ros2/mavros_extras/src/plugins/landing_target.cpp) plugin
+
+**High-level Unified ask Manager/Orchestrator:** 
+- Developed a high-level task/process management node aka [Commander](https://github.com/Kavin-Kailash/drdo_mav_exploration/blob/master/interiit21-drdo-iitm/src/commander.py)
+- Save computation power by starting nodes only when they are required and killing them when they are no longer needed.
+- One common Interface to oversee and monitor entire mission health
+- Records Time automatically between takeoff and landing on Target marker
+- Save and reload commonly used launch arguments as world profiles for easy reruns and tuning
+- Automatically detect and close hanging processes for a clean shutdown
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-3 mt-3 mt-md-0"></div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/drdo_explore/sys_arch.jpg" title="Workflow" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    System Architecture
 </div>
+
+
+Complete simulation runs can be found [here](https://drive.google.com/drive/folders/1FsI2ountCtP4dR7kJMuuxtqeFgvB6fCx?usp=drive_link).
+
+
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/drdo_explore/iitm_logo.png" title="example image" class="img-fluid rounded " %}
+    </div>
+    
+    <!-- <div class="col-sm-1 mt-3 mt-md-0"></div> -->
+
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/cfi_logo.png" title="example image" class="img-fluid rounded " %}
+    </div>
+
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/aero_club_logo.png" title="example image" class="img-fluid rounded " %}
+    </div>
+
+
+    <!-- <div class="col-sm-1 mt-3 mt-md-0"></div> -->
+    
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/drdo_explore/tech_meet_logo.png" title="example image" class="img-fluid rounded " %}
+    </div>
+    
+    <!-- <div class="col-sm-1 mt-3 mt-md-0"></div> -->
+
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/drdo_explore/drdo_logo.png" title="example image" class="img-fluid rounded" %}
     </div>
 </div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
-
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
