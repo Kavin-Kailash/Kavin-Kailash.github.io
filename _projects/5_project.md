@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HiveTrack
+title: DRDO SASE's UAV Fleet SAR Challenge
 description: Target Detection and Geo-Tagging with UAV Fleet
 img: assets/img/drdo_swarm/simulation.gif
 importance: 2
@@ -78,6 +78,7 @@ Multirotor propulsive drive optimisation followed by fabrication and assembly of
 - Fleet-GCS communications were routed through XBee Pro S3B radios.
 - Mission Computer to FCU comms over serial via MAVROS.
 
+---
 
 <div class="row">
     <div class="col-sm-2 mt-3 mt-md-0">

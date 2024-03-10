@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AeroLogix
+title: Flipkart GRiD 2.0 - UAV Track
 description: Autonomous GPS-denied UAS for Warehouse Logistics
 img: assets/img/grid/flipkart_grid.gif
 importance: 3
@@ -204,7 +204,7 @@ sub-modules/ sub-problems to solve:
 </div>
 
 
-
+---
 
 <div class="row">
     

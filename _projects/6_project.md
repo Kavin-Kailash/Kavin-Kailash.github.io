@@ -1,80 +1,78 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
+title: Recruit Robotics
+description: L3.5+ Flight Autonomy stack for Autonomous Aerial Logisitics transport in Urban Settings
+img: assets/img/sald/demo.gif
+importance: 2
 category: Work
+giscus_comments: false
+github: 
+skills: [Route Optimization, Motion Planning, Trajectory Optimization, Controls, Behaviour Trees, PCL, OpenCV, Gazebo, ROS, ArduPilot]
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i_isqmy8f3U?si=WoEbYvcNISFyl2sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+<div class="caption">
+    Simulated Demo
+</div>
+
+### Background
+Development of a Modular and Hierarchical Large-Scale Multi-Goal Navigation Stack in Large Scale Urban settings for last-mile aerial logistics. I worked on this problem while being employed at Recruit Robotics.
+
+
+## Brief
+This involved a multi-stop high level route optimiser (based on VROOM), a global planner (accounting for No-Fly Zones, Buildings (from OSM data), GeoFences, 2.5D Global Occupancy map based) and an multi-objective optimisation based local Trajectory planner (Local 3D SDF Map, Kino-Dynamic Limits, Length/Time Optimality), . Further for safe landing, I incorporated a terrain-flatness based landing site evaluation metric to select secondary landing spots or terminate landing.
+
+For trajectory tracking, I employed a differential flatness based full state geometric controller.
+
+The entire system was orchestrated using a Behaviour Tree (BT.CPP project by Davide Faconti), for rapid adaptability of the workflow.
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-2 mt-3 mt-md-0"></div>
+    <div class="col-sm-8 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/sald/local_planner.png" title="Workflow" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Local Planner
 </div>
+
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
-
-
-<div class="row justify-content-sm-center">
+    <div class="col-sm-2 mt-3 mt-md-0"></div>
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/sald/osm.jpeg" title="Workflow" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Custom OSM Buildings costmap plugin
 </div>
 
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
+<div class="row">
+    <div class="col-sm-2 mt-3 mt-md-0"></div>
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/sald/prec_land.png" title="Workflow" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-```
-{% endraw %}
+
+<div class="caption">
+    Precision Safe Lander
+</div>
+
+---
+
+<div class="row">
+    <div class="col-sm-5 mt-3 mt-md-0"></div>
+    <div class="col-sm-2 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/sald/rr_logo.png" title="Workflow" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+
+
+
+

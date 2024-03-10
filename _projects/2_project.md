@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Xplorer
+title: DRDO DGRE Visual UAS Exploration Challenge
 description: Fast Autonomous Vision-based Exploration for SAR Operations using low-cost UAS platform
 img: assets/img/drdo_explore/drdo_explore.gif
 importance: 2
@@ -89,6 +89,7 @@ based perception sensors for Target search and detection. Successful detection o
 
 Complete simulation runs can be found [here](https://drive.google.com/drive/folders/1FsI2ountCtP4dR7kJMuuxtqeFgvB6fCx?usp=drive_link).
 
+---
 
 <div class="row">
     <div class="col-sm-2 mt-3 mt-md-0">

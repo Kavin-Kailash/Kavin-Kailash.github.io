@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AgriCopter
+title: India Innovation Growth Programme 2.0
 description: Autonomous Intelligent Aerial Crop Maintenance System
 img: assets/img/agricopter/agricopter.gif
 importance: 6
@@ -66,6 +66,8 @@ With the Agricultural sector being one of the biggest contributors to India’s 
 <div class="caption">
     Custom smart MAVLink NavLED controller PCB
 </div>
+
+---
 
 <center>
 <div class="row">
