@@ -7,10 +7,10 @@ subtitle: Veni. Vidi. Vici.
 profile:
   align: left
   image: kavin.jpg
-  image_circular: true  # crops the image to make it circular
+  image_circular: false  # crops the image to make it circular
   more_info: >
-    <p>5922, Phillips Ave. </p>
-    <p>Pittsburgh, PA 15217</p>
+    <p>5000, Forbes Avenue </p>
+    <p>Pittsburgh, PA 15213</p>
 
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
